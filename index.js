@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import {
   View,
   requireNativeComponent,
@@ -29,18 +30,18 @@ ImageSequence.defaultProps = {
 };
 
 ImageSequence.propTypes = {
-  startFrameIndex: React.PropTypes.number,
-  images: React.PropTypes.array.isRequired,
-  framesPerSecond: React.PropTypes.number
+  startFrameIndex: PropTypes.number,
+  images: PropTypes.array.isRequired,
+  framesPerSecond: PropTypes.number
 };
 
 const RCTImageSequence = requireNativeComponent('RCTImageSequence', {
   propTypes: {
     ...ViewPropTypes,
-    images: React.PropTypes.arrayOf(React.PropTypes.shape({
-      uri: React.PropTypes.string.isRequired
+    images: PropTypes.arrayOf(PropTypes.shape({
+      uri: PropTypes.string.isRequired
     })).isRequired,
-    framesPerSecond: React.PropTypes.number
+    framesPerSecond: PropTypes.number
   },
 });
 
